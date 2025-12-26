@@ -10,7 +10,17 @@ if (!user || (user.rank !== "Captain" && user.rank !== "Strategist")) {
 }
 
 /* ======================
-   RENDER FULL CREW DATA
+   BACK BUTTON FIX
+====================== */
+const backBtn = document.getElementById("backBtn");
+backBtn.textContent = `⬅ Return to Low Core (${user.username} • ${user.role})`;
+
+backBtn.addEventListener("click", () => {
+  window.location.href = "../low/";
+});
+
+/* ======================
+   RENDER CREW
 ====================== */
 const container = document.getElementById("crew-details");
 
@@ -28,9 +38,3 @@ crew.forEach(member => {
 
   container.appendChild(card);
 });
-
-/* ======================
-   NAVIGATION
-====================== */
-window.goBack = function () {
-  window.location
