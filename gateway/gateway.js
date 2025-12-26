@@ -12,10 +12,10 @@ window.login = function () {
   }
 
   localStorage.setItem("loggedUser", JSON.stringify(member));
+
   if (member.rank === "Captain" || member.rank === "Strategist") {
-  window.location.href = "../core/high/";
+    window.location.href = "../core/high/";
   } else {
     window.location.href = "../core/low/";
   }
-
 };
